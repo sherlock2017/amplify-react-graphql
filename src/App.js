@@ -6,6 +6,7 @@ import {
   Button,
   Flex,
   Heading,
+  Image,
   Text,
   TextField,
   View,
@@ -60,7 +61,7 @@ const App = ({ signOut }) => {
     event.target.reset();
   }
 
-  async function deleteNote({ id }) {
+  async function deleteNote({ id, name }) {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
     await Storage.remove(name);
